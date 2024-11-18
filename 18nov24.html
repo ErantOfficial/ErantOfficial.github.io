@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table id="result">
+        <tr>
+            <th>Год</th>
+            <th>Сумма</th>
+        </tr>
+    </table>
+    <script>
+        let initialBalance = 100000; // первоначальная сумма
+        let rate = 18.5 / 100; // годовой процент
+        let period = 20; // срок вклада (годы)
+        let resultTable = document.getElementById('result');
+        let balance = initialBalance;
+
+        for (let year = 1; year <= period; year++) {
+            let interest = balance * rate;
+            balance += interest;
+            let row = resultTable.insertRow(year);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            cell1.innerHTML = year;
+            cell2.innerHTML = balance.toFixed(2) + ' рублей';
+        }
+    </script>
+</body>
+</html>
