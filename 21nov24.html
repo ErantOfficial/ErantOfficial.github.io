@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица умножения</title>
+    <style>
+        /* Стили для таблицы */
+        table {
+            border-collapse: collapse; /* Сворачиваем границы таблицы */
+        }
+        th, td {
+            border: 1px solid black; /* Устанавливаем границы для ячеек */
+            padding: 5px; /* Добавляем отступы для ячеек */
+        }
+    </style>
+</head>
+<body>
+    <h1>Таблица умножения</h1>
+    <table id="table"></table>
+
+    <script>
+        // Получаем элемент таблицы по id
+        let table = document.getElementById('table');
+
+        // Устанавливаем размер таблицы умножения (от 1 до size)
+        let size = 10;
+
+        // Вывод заголовков таблицы
+        let row = table.insertRow(0); // Добавляем новую строку в таблицу
+        for (let i = 0; i <= size; i++) {
+            let cell = row.insertCell(i); // Добавляем новую ячейку в строку
+            if (i == 0) {
+                // Если это первая ячейка, оставляем ее пустой
+                cell.innerHTML = '';
+            } else {
+                // Если это не первая ячейка, выводим номер столбца
+                cell.innerHTML = i;
+            }
+        }
+
+        // Вывод строк таблицы
+        for (let i = 1; i <= size; i++) {
+            let row = table.insertRow(i); // Добавляем новую строку в таблицу
+            for (let j = 0; j <= size; j++) {
+                let cell = row.insertCell(j); // Добавляем новую ячейку в строку
+                if (j == 0) {
+                    // Если это первая ячейка, выводим номер строки
+                    cell.innerHTML = i;
+                } else {
+                    // Если это не первая ячейка, выводим результат умножения
+                    cell.innerHTML = i * j;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
