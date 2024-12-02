@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP-запросы</title>
+</head>
+<body>
+    <script>
+        function canBreak(rows, columns, slices) {
+        if (slices <= (rows * columns)) {
+          return (slices % columns == 0) || (slices % rows == 0);
+        } else {
+            return false;
+        }
+  }
+        document.write("16 долек: " + (canBreak(7, 4, 16) ? "Да" : "Нет") + "<br>");
+        document.write("9 долек: " + (canBreak(7, 4, 9) ? "Да" : "Нет") + "<br>");
+      </script>
+</body>
+</html>
